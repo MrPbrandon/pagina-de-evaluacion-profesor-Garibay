@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #f3e7e9 0%, #e3eeff 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.titulo {
+    display: block;
+    text-align: center;
+    font-size: 2.2em;
+    color: #e53935;
+    margin: 20px 0 30px 0;
+    letter-spacing: 2px;
+}
+
+form, #divIngresar, #divRegistro, #panel, #registroProducto, #registroPromo {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.09);
+    max-width: 400px;
+    margin: 40px auto 20px auto;
+    padding: 30px 32px 24px 32px;
+    position: relative;
+}
+
+label, .cuadro-texto {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+    font-size: 1.08em;
+}
+
+.cuadro-texto, select {
+    border-radius: 8px;
+    border: 1.5px solid #bdbdbd;
+    padding: 10px 12px;
+    font-size: 1.02em;
+    background: #f7f7f7;
+    margin-bottom: 20px;
+    transition: border .2s;
+}
+
+.cuadro-texto:focus, select:focus {
+    outline: none;
+    border: 1.5px solid #e53935;
+    background: #fff;
+}
+
+button, Button {
+    background: linear-gradient(90deg, #ffe259 0%, #ffa751 100%);
+    border: none;
+    border-radius: 26px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.03em;
+    padding: 13px 30px;
+    margin: 8px 4px 0 0;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(229,57,53,0.08);
+    transition: background 0.25s, transform 0.12s;
+    text-shadow: 0px 2px 5px #ffb30033;
+    letter-spacing: 1px;
+}
+
+button:hover, Button:hover {
+    background: linear-gradient(90deg, #ff6a00 0%, #ffb347 100%);
+    transform: translateY(-2px) scale(1.03);
+}
+
+select {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    form, #divIngresar, #divRegistro, #panel, #registroProducto, #registroPromo {
+        max-width: 95vw;
+        padding: 15px 8vw;
+    }
+    .catalogo-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang ="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<div id="divIngresar" style="display: block;">
+    <span class="titulo">Iniciar Sesión</span>
+    <br><br>
+    Correo:
+    <input type="text" id="txtCorreoI" placeholder="Correo" class="cuadro-texto">
+    <br><br>
+    Contraseña:
+    <input type="password" id="txtContrasenaI" placeholder="Contraseña" class="cuadro-texto">
+    <br><br>
+    <button onclick="Ingresar()">Ingresar</button>
+    <button id="btnMostrarRegistro" onclick="mostrarRegistro()">Registrar</button>
+    <br><br>
+    <button onclick="window.location.href='catalogo.html'">Ver Catálogo</button>
+</div>
+
+<div id="divRegistro" style="display: none;">
+    <span class="titulo">Registro</span>
+    <br><br>
+    Nombre:
+    <input type="text" id="txtNombre" placeholder="Nombre" class="cuadro-texto">
+    <br>
+    Correo:
+    <input type="text" id="txtCorreo" placeholder="Correo" class="cuadro-texto">
+    <br>
+    Contraseña:
+    <input type="password" id="txtContrasena" placeholder="Contraseña" class="cuadro-texto">
+    <br>
+    Confirmación de Contraseña:
+    <input type="password" id="txtConfContrasena" placeholder="Confirma Contraseña" class="cuadro-texto">
+    <br><br>
+    <button onclick="Registrar()">Registrar</button>
+    <button id="btnMostrarIngresar" onclick="mostrarIngresar()">Cancelar</button>
+</div>
+<script src="js/index.js"></script>
+</body>
+</html>

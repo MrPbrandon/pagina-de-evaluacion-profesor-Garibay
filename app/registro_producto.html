@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar Producto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<div id="registroProducto">
+  <span class="titulo">Registro de Producto</span>
+  <br><br>
+  Nombre:<br>
+  <input type="text" id="txtNombreProducto" placeholder="Nombre" class="cuadro-texto">
+  <br>
+  Costo:<br>
+  <input type="number" id="txtCosto" placeholder="Costo" class="cuadro-texto">
+  <br>
+  Foto (URL):<br>
+  <input type="text" id="txtFoto" placeholder="URL de la foto" class="cuadro-texto">
+  <br><br>
+  <button onclick="RegistrarProducto()">Registrar</button>
+  <button type="button" onclick="window.location.href='panel.html'">Regresar</button>
+</div>
+<script src="js/registro_producto.js"></script>
+<script>
+  // Proteger página: solo usuario logueado y sesión activa
+  const usuario = JSON.parse(localStorage.getItem('usuario'));
+  const sesionHora = parseInt(localStorage.getItem('sesionHora'), 10);
+  const limiteSesion = 30 * 60 * 1000; // 30 minutos
+  if (!usuario || !sesionHora || Date.now() - sesionHora > limiteSesion) {
+    localStorage.removeItem('usuario');
+    localStorage.removeItem('sesionHora');
+    window.location.href = "index.html";
+  } else {
+    localStorage.setItem('sesionHora', Date.now());
+  }
+</script>
+</body>
+</html>

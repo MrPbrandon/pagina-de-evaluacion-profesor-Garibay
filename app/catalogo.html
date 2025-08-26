@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo de Productos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/estilo.css">
+  <style>
+    .catalogo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+    .producto-card {
+      background: #fff9c4;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px #ff980033;
+      padding: 22px;
+      text-align: center;
+      transition: transform .13s;
+    }
+    .producto-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 4px 20px #ffd54f77;
+    }
+    .producto-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      border: 1.5px solid #ffe082;
+    }
+    .producto-nombre {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #e53935;
+      margin-bottom: 6px;
+    }
+    .producto-costo {
+      color: #ff6f00;
+      font-size: 1.1em;
+      margin-bottom: 7px;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <span class="titulo">Catálogo de Productos</span>
+  <div class="catalogo-grid" id="catalogoGrid">
+    <!-- Aquí se cargan los productos -->
+  </div>
+  <button onclick="window.location.href='index.html'">Regresar</button>
+</div>
+<script src="js/catalogo.js"></script>
+</body>
+</html>

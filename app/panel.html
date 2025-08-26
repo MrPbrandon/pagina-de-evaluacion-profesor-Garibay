@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de usuario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<div id="panel">
+    <span id="bienvenida"></span>
+    <br><br>
+    <button onclick="window.location.href='registro_producto.html'">Registrar Producto</button>
+    <button onclick="window.location.href='promociones.html'">Registrar Promoción</button>
+    <button onclick="cerrarSesion()">Cerrar sesión</button>
+</div>
+<script>
+    // Proteger página: solo usuario logueado y sesión activa
+    const usuario = JSON.parse(localStorage.getItem('usuario'));
+    const sesionHora = parseInt(localStorage.getItem('sesionHora'), 10);
+    const limiteSesion = 30 * 60 * 1000; // 30 minutos
+    if (!usuario || !sesionHora || Date.now() - sesionHora > limiteSesion) {
+        localStorage.removeItem('usuario');
+        localStorage.removeItem('sesionHora');
+        window.location.href = "index.html";
+    } else {
+        localStorage.setItem('sesionHora', Date.now());
+    }
+
+    // Mostrar bienvenida con el nombre correcto
+    if (usuario && usuario.name) {
+        document.getElementById('bienvenida').innerText = "Bienvenido, " + usuario.name;
+    } else {
+        document.getElementById('bienvenida').innerText = "Bienvenido";
+    }
+
+    function cerrarSesion() {
+        localStorage.removeItem('usuario');
+        localStorage.removeItem('sesionHora');
+        window.location.href = "index.html";
+    }
+</script>
+</body>
+</html>>

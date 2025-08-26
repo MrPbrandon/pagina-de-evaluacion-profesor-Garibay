@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar Promoción</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<div id="registroPromo">
+  <span class="titulo">Registrar Promoción</span>
+  <br><br>
+  Producto:<br>
+  <select id="selProducto"></select>
+  <br><br>
+  <button onclick="RegistrarPromocion()">Registrar Promoción</button>
+  <button type="button" onclick="window.location.href='panel.html'">Regresar</button>
+</div>
+<script src="js/promociones.js"></script>
+<script>
+  const usuario = JSON.parse(localStorage.getItem('usuario'));
+  const sesionHora = parseInt(localStorage.getItem('sesionHora'), 10);
+  const limiteSesion = 30 * 60 * 1000;
+  if (!usuario || !sesionHora || Date.now() - sesionHora > limiteSesion) {
+    localStorage.removeItem('usuario');
+    localStorage.removeItem('sesionHora');
+    window.location.href = "index.html";
+  } else {
+    localStorage.setItem('sesionHora', Date.now());
+  }
+</script>
+</body>
+</html>
